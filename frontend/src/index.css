@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background:
+    conic-gradient(at 78% 3%, #0000 75%, #0D9488 0),
+    conic-gradient(at 78% 3%, #0000 75%, #0D9488 0) 32px 32px,
+    conic-gradient(at 78% 3%, #0000 75%, #0D9488 0) calc(2*32px) calc(2*32px),
+    conic-gradient(at 78% 3%, #0000 75%, #0D9488 0) calc(3*32px) calc(3*32px),
+    conic-gradient(at 3% 78%, #0000 75%, #0D9488 0) 0 calc(3*32px),
+    conic-gradient(at 3% 78%, #0000 75%, #0D9488 0) 32px 0,
+    conic-gradient(at 3% 78%, #0000 75%, #0D9488 0) calc(2*32px) 32px,
+    conic-gradient(at 3% 78%, #0000 75%, #0D9488 0) calc(3*32px) calc(2*32px),
+    #F1F5F9; /* Light grey for a neutral background */
+  background-size: calc(4 * 32px) calc(4 * 32px);
+}

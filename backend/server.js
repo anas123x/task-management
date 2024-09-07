@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors'); // Import the cors module
 const app = express();
 const port = 3000;
 const taskRoutes = require('./routes/taskRoutes');
@@ -7,6 +8,7 @@ const db = require('./config/db');
 
 // Middleware
 app.use(express.json());
+app.use(cors({origin: 'http://localhost:5173'})); // Use the cors middleware
 app.use('/tasks', taskRoutes);
 app.use('/auth', authRoutes);
 

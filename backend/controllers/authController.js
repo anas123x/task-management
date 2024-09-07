@@ -5,8 +5,13 @@ const bcrypt = require('bcryptjs');
 exports.register = (req, res) => {
   const newUser = new User(req.body);
   User.create(newUser, (err, userId) => {
-    if (err) res.status(500).send(err);
-    res.status(201).json({ id: userId });
+    if (err) {
+      if (err === 'User already exists') {
+        return res.status(400).send(err);
+      }
+      return res.status(500).send(err);
+    }
+    return res.status(201).json({ id: userId });
   });
 };
 
