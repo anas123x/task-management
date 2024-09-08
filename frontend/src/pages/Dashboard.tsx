@@ -28,7 +28,7 @@ const deleteTask = async (id: number) => {
     setTasks(tasks.filter((task) => task.id !== id))
     }
   const getTasks = async () => {
-    await taskService.getTasks().then((res) => {
+    await taskService.getTasksByUser(16).then((res) => {
       setTasks(res.data);
     }).catch((err) => {
       console.log(err);

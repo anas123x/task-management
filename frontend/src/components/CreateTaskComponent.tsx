@@ -45,7 +45,7 @@ const CreateTaskComponent: React.FC<CreateTaskComponentProps> = ({ addTask }) =>
     <div className=" bg-gradient-to-r from-white to-teal-50 py-10 px-10 m-5 relative shadow-xl">
         <a
         onClick={logout}
-        className="hover:cursor-pointer font-bold bg-gray-100 hover:bg-teal-200 hover:bg-am hover:bg-opacity-100  p-2 bg-opacity-100 flex absolute top-0 right-0"
+        className="hover:cursor-pointer font-bold bg-teal-400 text-white hover:bg-teal-300 hover:bg-am hover:bg-opacity-100  p-2 bg-opacity-100 flex absolute top-0 right-0"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

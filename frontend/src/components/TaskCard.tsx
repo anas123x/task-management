@@ -7,10 +7,11 @@ interface TaskCardProps {
   description: string;
   completed: boolean;
   id: number;
+  user_id: number;
   deleteTask: (id: number) => void;
 }
 
-const TaskCard: React.FC<TaskCardProps> = ({ title, description, completed, id ,deleteTask}) => {
+const TaskCard: React.FC<TaskCardProps> = ({ title, description, completed, id ,deleteTask,user_id}) => {
   const [task, setTask] = useState({ title, description, completed});
   const [isModalOpen, setIsModalOpen] = useState(false);
     const taskService = new TaskService();
@@ -19,7 +20,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ title, description, completed, id ,
   };
  
   const handleSave = async (updatedTask: { title: string; description: string; completed: boolean }) => {
-    await taskService.updateTask(id, updatedTask).then((res) => {
+    await taskService.updateTask(id, {...updatedTask,user_id}).then((res) => {
       console.log(res.data);
     }).catch((err) => {
       console.log(err);
@@ -33,7 +34,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ title, description, completed, id ,
   }
 
   const handleComplete = async () => {
-    await taskService.updateTask(id, { title: task.title, description, completed: !completed }).then((res) => {
+    await taskService.updateTask(id, { title: task.title, description, completed: !completed,user_id }).then((res) => {
       console.log(res.data);
     }).catch((err) => {
       console.log(err);
@@ -43,11 +44,12 @@ const TaskCard: React.FC<TaskCardProps> = ({ title, description, completed, id ,
 
   return (
     <div
-      className={`task-card max-w-xs m-1 relative p-4 border rounded-lg shadow-lg transition-transform duration-200 hover:scale-105
+      className={`task-card max-w-xs flex flex-col justify-between  m-1 relative p-4 border rounded-lg shadow-lg transition-transform duration-200 hover:scale-105
             ${task.completed ? "bg-green-100 border-green-400" : "bg-slate-100 border-slate-400"}`}
     >
+      <div>
       <div className="flex justify-between items-center mb-2">
-        <h3 className="text-lg font-semibold text-gray-800">{task.title}</h3>
+        <h3 className="text-lg font-semibold text-gray-800 font-ono">{task.title}</h3>
         <div className="flex items-center space-x-2">
           {task.completed ? (
             <svg
@@ -85,9 +87,9 @@ const TaskCard: React.FC<TaskCardProps> = ({ title, description, completed, id ,
         </div>
       </div>
 
-      <p className="text-sm text-gray-600">{task.description}</p>
-
-      <div className="mt-4 text-right">
+      <p className="text-sm text-gray-600 font-mono">{task.description}</p>
+      </div>
+      <div className="mt-4 text-right ">
         <button
           onClick={() => handleComplete()}
           className={`py-1 px-4 text-sm font-semibold rounded-lg 
@@ -102,6 +104,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ title, description, completed, id ,
        task={task}
        id={id}
        isOpen={isModalOpen}
+       user_id={user_id}
        onClose={() => setIsModalOpen(false)}
        onSave={handleSave}
          deleteTask={handleDelete}

@@ -28,6 +28,7 @@ const ViewTasksComponent: React.FC<ViewTasksComponentProps> = ({
               title={task.title}
               description={task.description}
               completed={task.completed}
+              user_id={task.user_id}
               id={task.id}
               deleteTask={handleDelete}
             />

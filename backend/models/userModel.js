@@ -29,6 +29,8 @@ class User {
       return result(null, res[0]);
     });
   }
+
+  
 }
 
 module.exports = User;

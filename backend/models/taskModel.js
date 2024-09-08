@@ -5,6 +5,7 @@ class Task {
     this.title = task.title;
     this.description = task.description;
     this.completed = task.completed;
+    this.user_id = task.user_id;
   }
 
   static getAll(result) {
@@ -37,6 +38,13 @@ class Task {
 
   static delete(id, result) {
     db.query('DELETE FROM tasks WHERE id = ?', [id], (err, res) => {
+      if (err) result(err, null);
+      result(null, res);
+    });
+  }
+
+  static getTasksByUserId(user_id, result) {
+    db.query('SELECT * FROM tasks WHERE user_id = ?', [user_id], (err, res) => {
       if (err) result(err, null);
       result(null, res);
     });

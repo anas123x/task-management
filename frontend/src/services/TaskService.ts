@@ -12,9 +12,9 @@ export class TaskService {
         }});
     }
 
-    getTasks() {
+    getTasksByUser(id: number) {
        
-        return axios.get(`${this.url}/tasks`,{headers: {
+        return axios.get(`${this.url}/tasks/user/${id}`,{headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
         }});
     }

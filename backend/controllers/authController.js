@@ -25,7 +25,7 @@ exports.login = (req, res) => {
       if (err) res.status(500).send(err);
       if (!isMatch) return res.status(401).send('Invalid credentials');
 
-      const token = jwt.sign({ email:user.email }, 'your_jwt_secret', { expiresIn: '24h' });
+      const token = jwt.sign({ id:user.id }, 'your_jwt_secret', { expiresIn: '24h' });
       res.status(200).json({ token });
     });
   });

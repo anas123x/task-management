@@ -10,17 +10,18 @@ interface TaskEditModalProps {
 
   id: number;
   isOpen: boolean;
+  user_id: number;
   onClose: () => void;
-  onSave: (updatedTask: { title: string; description: string; completed: boolean }) => void;
+  onSave: (updatedTask: { title: string; description: string; completed: boolean,user_id:number }) => void;
   deleteTask: (id: number) => void;
 }
 
-const TaskEditModal: React.FC<TaskEditModalProps> = ({ task, isOpen, onClose, onSave, deleteTask ,id}) => {
+const TaskEditModal: React.FC<TaskEditModalProps> = ({ task, isOpen, onClose, onSave, deleteTask ,id,user_id}) => {
   const [title, setTitle] = useState(task.title);
   const [description, setDescription] = useState(task.description);
 
   const handleSave = () => {
-    onSave({ ...task, title, description });
+    onSave({ ...task, title, description,user_id });
   };
   const handleDelete= ()=>{
     deleteTask(id);

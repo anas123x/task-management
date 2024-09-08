@@ -19,7 +19,8 @@ const createTasksTable = `
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
-    completed BOOLEAN DEFAULT 0
+    completed BOOLEAN DEFAULT 0,
+    user_id INT NOT NULL
   )
 `;
 
