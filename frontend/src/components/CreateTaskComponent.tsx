@@ -36,12 +36,36 @@ const CreateTaskComponent: React.FC<CreateTaskComponentProps> = ({ addTask }) =>
       console.log(err);
     });
   };
+  const logout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  };
 
   return (
-    <div className="w-full bg-gradient-to-r from-white to-teal-50 py-10 px-10 mt-12 rounded-xl shadow-xl">
+    <div className=" bg-gradient-to-r from-white to-teal-50 py-10 px-10 m-5 relative shadow-xl">
+        <a
+        onClick={logout}
+        className="hover:cursor-pointer font-bold bg-gray-100 hover:bg-teal-200 hover:bg-am hover:bg-opacity-100  p-2 bg-opacity-100 flex absolute top-0 right-0"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="size-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+          />
+        </svg>
+        logout
+      </a>
       <div className="flex flex-col md:flex-row">
         <form onSubmit={handleSubmit} className="md:w-1/2">
-          <h1 className="font-bold text-3xl text-teal-700 mb-6 flex items-center">
+          <h1 className="font-light text-3xl text-teal-700 mb-6 flex items-center">
             Start a New Task
           </h1>
 
@@ -107,7 +131,7 @@ const CreateTaskComponent: React.FC<CreateTaskComponentProps> = ({ addTask }) =>
 
         <div className="md:w-1/2 md:pl-12 mt-10 md:mt-0 flex flex-col justify-between">
           <div>
-            <h2 className="text-xl font-medium text-teal-700 mb-4 flex items-center">
+            <h2 className="text-xl font-light text-teal-700 mb-4 flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
