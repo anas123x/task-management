@@ -5,11 +5,12 @@ const port = 3000;
 const taskRoutes = require('./routes/taskRoutes');
 const authRoutes = require('./routes/authRoutes');
 const db = require('./config/db');
+const verifyToken = require('./middlewares/authMiddlware'); // Import the JWT middleware
 
 // Middleware
 app.use(express.json());
 app.use(cors({origin: 'http://localhost:5173'})); // Use the cors middleware
-app.use('/tasks', taskRoutes);
+app.use('/tasks', verifyToken,taskRoutes);
 app.use('/auth', authRoutes);
 
 // Create tasks table if it doesn't exist
@@ -18,8 +19,7 @@ const createTasksTable = `
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
-    status VARCHAR(50) DEFAULT 'pending',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    completed BOOLEAN DEFAULT 0
   )
 `;
 

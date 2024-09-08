@@ -18,12 +18,12 @@ exports.createTask = (req, res) => {
   const newTask = new Task(req.body);
   Task.create(newTask, (err, taskId) => {
     if (err) res.status(500).send(err);
-    res.status(201).json({ id: taskId });
+    res.status(201).json({ id: taskId, ...newTask });
   });
 };
 
 exports.updateTask = (req, res) => {
-  const updatedTask = new Task(req.body);
+  const updatedTask = new Task(req.body.task);
   Task.update(req.params.id, updatedTask, (err) => {
     if (err) res.status(500).send(err);
     res.status(200).send('Task updated successfully');

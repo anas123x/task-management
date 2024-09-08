@@ -4,6 +4,7 @@ class Task {
   constructor(task) {
     this.title = task.title;
     this.description = task.description;
+    this.completed = task.completed;
   }
 
   static getAll(result) {

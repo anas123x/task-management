@@ -109,7 +109,7 @@ const Register: React.FC<Props> = () => {
                   autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-lg border-2 border-gray-400 p-1.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-teal-500"
                 />
               </div>
             </div>
@@ -130,7 +130,7 @@ const Register: React.FC<Props> = () => {
                   type={showPassword ? "text" : "password"}
                   required
                   autoComplete="current-password"
-                  className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-lg border-2 border-gray-400 p-1.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-teal-500"
                   value={password}
                   onChange={handlePasswordChange}
                 />
@@ -203,7 +203,7 @@ const Register: React.FC<Props> = () => {
                   type={showConfirmPassword ? "text" : "password"}
                   required
                   autoComplete="current-password"
-                  className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-lg border-2 border-gray-400 p-1.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-teal-500"
                   value={confirmPassword}
                   onChange={handleConfirmPasswordChange}
                 />
