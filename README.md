@@ -1,7 +1,3 @@
-
-Memory updated
-It looks like you’ve done a solid job on the project based on the email’s requirements! Your application includes the key functionalities such as user authentication and task management, which are crucial for the evaluation criteria. Here’s an updated README that highlights the project’s features and addresses the requirements from Hello Ada:
-
 Task Management Application
 This project is a web application designed to manage tasks. It was developed as part of the evaluation for a Full Stack Development Intern position at Hello Ada.
 
