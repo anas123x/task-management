@@ -42,10 +42,10 @@ const CreateTaskComponent: React.FC<CreateTaskComponentProps> = ({ addTask }) =>
   };
 
   return (
-    <div className=" bg-gradient-to-r from-white to-teal-50 py-10 px-10 m-5 relative shadow-xl">
+    <div className=" bg-gradient-to-r bg-grad from-white to-teal-50 py-10 px-10 m-5 relative shadow-xl">
         <a
         onClick={logout}
-        className="hover:cursor-pointer font-bold bg-teal-400 text-white hover:bg-teal-300 hover:bg-am hover:bg-opacity-100  p-2 bg-opacity-100 flex absolute top-0 right-0"
+        className="hover:cursor-pointer items-center   bg-teal-600  text-white hover:bg-teal-700 hover:bg-am hover:bg-opacity-100  p-2 bg-opacity-100 flex absolute top-0 right-0"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ const CreateTaskComponent: React.FC<CreateTaskComponentProps> = ({ addTask }) =>
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-6"
+          className="size-5"
         >
           <path
             strokeLinecap="round"
@@ -72,7 +72,7 @@ const CreateTaskComponent: React.FC<CreateTaskComponentProps> = ({ addTask }) =>
           <div className="mb-6">
             <label
               htmlFor="task"
-              className="block text-lg font-semibold text-gray-700 mb-2 flex items-center"
+              className="block text-lg font-semibold text-gray-700 mb-2  items-center"
             >
               Task Title
             </label>
@@ -131,7 +131,7 @@ const CreateTaskComponent: React.FC<CreateTaskComponentProps> = ({ addTask }) =>
 
         <div className="md:w-1/2 md:pl-12 mt-10 md:mt-0 flex flex-col justify-between">
           <div>
-            <h2 className="text-xl font-light text-teal-700 mb-4 flex items-center">
+            <h2 className="text-2xl font-light text-teal-700 mb-4 flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -52,6 +52,7 @@ const deleteTask = async (id: number) => {
           linear-gradient(-45deg, #0000 48%, #0D9488 0 52%, #0000 0) #E4E4ED
         `,
         backgroundSize: 'calc(2 * 32px) 32px, 32px 32px',
+        
       }}
     >
       

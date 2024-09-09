@@ -16,7 +16,7 @@ const ViewTasksComponent: React.FC<ViewTasksComponentProps> = ({
     tasks.filter((task) => task.id !== id);
   };
   return (
-    <div className=" bg-gradient-to-r from-white  to-teal-50 py-10 px-10 m-5  shadow-xl  mb-3" style={{minHeight:559}}>
+    <div className=" bg-gradient-to-br from-white  to-teal-50 py-10 px-10 m-5  shadow-xl  mb-3" style={{minHeight:559}}>
       <h1 className="font-light text-3xl text-teal-700 mb-6 flex items-center">
         Your Tasks
       </h1>
